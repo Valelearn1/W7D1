@@ -42,7 +42,53 @@ class LibroDigitale extends Libro {
 }
 
 // === Stato (array di libri) ===
+const libri = [
+  new LibroDigitale("Il nome della rosa", "Umberto Eco", 1980, true, "digitale", 2.4),
+  new LibroDigitale("1984", "George Orwell", 1949, true, "digitale", 1.1),
+  new Libro("Il Signore degli Anelli", "J.R.R. Tolkien", 1954, true),
+  new LibroDigitale("Harry Potter e la pietra filosofale", "J.K. Rowling", 1997, false, "digitale", 3.2),
+  new Libro("Orgoglio e pregiudizio", "Jane Austen", 1813, false),
+  new LibroDigitale("Il Grande Gatsby", "F. Scott Fitzgerald", 1925, true, "digitale", 0.8),
+  new Libro("Delitto e castigo", "Fyodor Dostoevsky", 1866, false),
+  new LibroDigitale("Il Conte di Montecristo", "Alexandre Dumas", 1844, false, "digitale", 5.7),
+  new Libro("Don Chisciotte", "Miguel de Cervantes", 1605, true),
+  new LibroDigitale("La metamorfosi", "Franz Kafka", 1915, true, "digitale", 0.5),
+];
 
 // === Render ===
+function renderLibri() {
+    const ul = document.getElementById("lista-libri"); // creare la "libreria"
+    ul.innerHTML = ""; // per svuotare il contenuto, per partire "puliti"
+
+    libri.forEach((libri) {
+        const li = document.createElement("li"); // crea un li per ogni libro
+
+        const titolo = document.createElement("strong"); // per avere il titolo in grassetto
+        titolo.textContent = `${libro.titolo} - ${libro.autore} - ${libro.anno}`;
+
+        const formato = document.createElement("em") // il testo del formato apparirà in corsivo
+        if (libro instanceof LibroDigitale) {
+            formato.textContent = `digitale - ${libro.dimensioneMb} MB`;
+        } else {
+            formato.textContent = "cartaceo";
+        }
+
+        const stato = document.createElement("span");
+        stato.textContent = libro.letto ? "✓ Letto" : "✗ Non letto";
+        
+        const bottone = document.createElement("button");
+        bottone.textContent = "Segna come letto";
+        bottone.dataset.id = libro.id;  // data-id serve per l'event delegation
+
+        li.appendChild(titolo);   // aggiungi <strong> dentro <li>
+        li.appendChild(formato);  // aggiungi <em> dentro <li>
+        li.appendChild(stato);    // aggiungi <span> dentro <li>
+        li.appendChild(bottone);  // aggiungi <button> dentro <li>
+
+        ul.appendChild(li);       // aggiungi <li> dentro <ul>
+    });
+}
+
+renderLibri();
 
 // === Eventi ===
