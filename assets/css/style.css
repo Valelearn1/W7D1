@@ -10,7 +10,7 @@ body {
   font-family: "Helvetica Neue", Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  background: #f7f7f7;
+  background: rgb(245, 244, 244);
   color: #1a1a1a;
 }
 
@@ -36,3 +36,16 @@ body {
 }
 
 /* Aggiungi qui le tue regole per form, lista libri, bottoni, ecc. */
+.form-section {
+  background-color: white;
+  border-radius: 8px;
+  padding: 24px 16px;
+}
+
+.btn-primary {
+  margin-top: 16px;
+  background-color: rgb(15, 15, 45);
+  color: white;
+  border-radius: 8px;
+  padding: 6px 20px;
+}

@@ -8,48 +8,41 @@
 //
 // Bonus: bottone "Segna come letto" su ogni elemento, gestito con event delegation.
 
-
 // === Classi ===
 class Libro {
-    static contatore = 0;
-    constructor("_titolo", "_autore", "_anno", "_letto") {
-        this.id = Libro.contatore++;
-        this.titolo = _titolo;
-        this.autore = _autore;
-        this.anno = _anno;
-        this.letto = false;
-    }
+  static contatore = 0;
+  constructor(_titolo, _autore, _anno, _letto) {
+    this.id = Libro.contatore++;
+    this.titolo = _titolo;
+    this.autore = _autore;
+    this.anno = _anno;
+    this.letto = false;
+  }
 
-    segnaComeLetto() {
-        this.letto = true;
-    }
+  segnaComeLetto() {
+    this.letto = true;
+  }
 
-    formato() {
-        this.type = "cartaceo";
-    }
+  formato() {
+    this.type = "cartaceo";
+  }
 }
 
 class LibroDigitale extends Libro {
-    constructor("_titolo", "_autore", "_anno", "_letto", "_formato", "_dimensioneMb") {
-        super("_titolo", "_autore", "_anno", "_letto");
-        this.formato = _formato;
-        this.dimensioneMb = _dimensioneMb;
-    }
-}
+  constructor(_titolo, _autore, _anno, _letto, _formato, _dimensioneMb) {
+    super(_titolo, _autore, _anno, _letto);
+    this.formato = _formato;
+    this.dimensioneMb = _dimensioneMb;
+  }
 
-class LibroDigitale {
-    formato() {
-        this.type = `digitale (${this.dimensioneMb} MB)`;
-    }
+  formato() {
+    // per fare override
+    this.type = `digitale (${this.dimensioneMb} MB)`;
+  }
 }
-
 
 // === Stato (array di libri) ===
 
-
-
 // === Render ===
-
-
 
 // === Eventi ===
