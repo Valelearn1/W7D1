@@ -24,58 +24,31 @@
         <h2 class="fw-bold">Aggiungi un libro</h2>
         <form id="aggiungi-libro" class="form">
           <div class="campo fw-bold">
-            <label for="formGroupExampleInput" class="form-label">Titolo</label>
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput"
-              placeholder="Example input placeholder"
-            />
+            <label for="titolo" class="form-label">Titolo</label>
+            <input type="text" class="form-control" id="titolo" placeholder="Es. Il nome della rosa" />
           </div>
           <div class="campo fw-bold">
-            <label for="formGroupExampleInput2" class="form-label"
-              >Autore</label
-            >
-            <input
-              type="text"
-              class="form-control"
-              id="formGroupExampleInput2"
-              placeholder="Another input placeholder"
-            />
+            <label for="autore" class="form-label">Autore</label>
+            <input type="text" class="form-control" id="autore" placeholder="Es. Umberto Eco" />
           </div>
           <div class="campo fw-bold">
-            <label for="formGroupExampleInput" class="form-label">Anno</label>
-            <input
-              type="number"
-              class="form-control"
-              id="formGroupExampleInput"
-              placeholder="Example input placeholder"
-            />
+            <label for="anno" class="form-label">Anno</label>
+            <input type="number" class="form-control" id="anno" placeholder="Es. 1980" />
           </div>
           <div class="campo fw-bold">
-            <label for="formGroupExampleInput" class="form-label"
-              >Formato</label
-            >
-            <select class="form-select" aria-label="Default select example">
-              <option selected></option>
-              <option value="1">Cartaceo</option>
-              <option value="2">Digitale</option>
+            <label for="formato" class="form-label">Formato</label>
+            <select id="formato" class="form-select" aria-label="Default select example">
+              <option selected value=""></option>
+              <option value="cartaceo">Cartaceo</option>
+              <option value="digitale">Digitale</option>
             </select>
           </div>
           <div class="campo campo-condizionale" id="campo-dimensione" hidden>
-            <label for="formGroupExampleInput" class="form-label"
-              >Dimensione MB</label
-            >
-            <input
-              type="number"
-              step="0.1"
-              class="form-control"
-              id="formGroupExampleInput"
-              placeholder="Example input placeholder"
-            />
+            <label for="dimensione" class="form-label">Dimensione MB</label>
+            <input type="number" step="0.1" class="form-control" id="dimensione" placeholder="Es. 2.4" />
           </div>
+          <button type="submit" class="btn-primary">Aggiungi</button>
         </form>
-        <button type="submit" class="btn-primary">Aggiungi</button>
       </section>
 
       <section class="lista-section">
